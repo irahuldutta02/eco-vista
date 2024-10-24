@@ -1,4 +1,4 @@
-import LocationDetector from "./components/LocationDetector";
+import LocationDetector from "../components/LocationDetector";
 
 export default function Home() {
   return <LocationDetector />;
