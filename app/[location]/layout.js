@@ -17,23 +17,23 @@ export default function RootLayout({
   temperature,
 }) {
   return (
-    <div className="wrapper">
-      <div className="overlay"></div>
+    <div className="wrapper relative min-h-screen overflow-hidden">
       <Image
         src="/background.png"
-        className="bg-img"
-        width={700}
-        height={1200}
+        className="bg-img absolute object-cover w-full h-full"
+        layout="fill"
         alt="background image"
       />
-      <main className="!z-50 w-full">
-        <div className=" flex justify-center items-center gap-8 w-full p-4 flex-wrap">
-          <div>{children}</div>
-          <div className=" flex justify-center items-center gap-8 w-full p-4 flex-wrap">
-            {weather}
-            {aqi}
-            {wind}
-            {temperature}
+      <main className="relative z-10 w-full min-h-screen flex items-center justify-center p-4">
+        <div className="glass">
+          <div className="glass-content flex flex-col justify-center items-center gap-4 p-4">
+            <div className="bg-gray-800 rounded-lg p-4">{children}</div>
+            <div className="flex justify-center items-center gap-4 flex-wrap">
+              {weather}
+              {aqi}
+              {wind}
+              {temperature}
+            </div>
           </div>
         </div>
       </main>
